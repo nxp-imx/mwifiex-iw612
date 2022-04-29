@@ -1,0 +1,13 @@
+LOCAL_PATH := $(my-dir)
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := mlanevent.exe
+LOCAL_SRC_FILES := mlanevent.c
+LOCAL_MODULE_TAGS := optional
+
+CONFIG_WIFI_DIRECT_SUPPORT=y
+ifeq ($(CONFIG_WIFI_DIRECT_SUPPORT), y)
+LOCAL_CFLAGS += -DWIFI_DIRECT_SUPPORT
+endif
+
+include $(BUILD_EXECUTABLE)
