@@ -5589,7 +5589,8 @@ static int get_netlink_num(int i)
 
 	if (fp) {
 		while (!feof(fp)) {
-			fgets(str, sizeof(str), fp);
+			if (!fgets(str, sizeof(str), fp))
+				break;
 			if (strncmp(str, srch, strlen(srch)) == 0) {
 				netlink_num = atoi(str + strlen(srch) + 1);
 				break;

@@ -90,7 +90,7 @@ CONFIG_MULTI_CHAN_SUPPORT=y
 
 # Use static link for app build
 export CONFIG_STATIC_LINK=y
-CONFIG_ANDROID_KERNEL=y
+CONFIG_ANDROID_KERNEL=n
 
 #32bit app over 64bit kernel support
 CONFIG_USERSPACE_32BIT_OVER_KERNEL_64BIT=n
@@ -119,7 +119,7 @@ CROSS_COMPILE ?= /opt/fsl-imx-internal-xwayland/5.10-gatesgarth/sysroots/x86_64-
 
 LD += -S
 
-BINDIR = ../bin_sdw61x
+BINDIR = bin_sdw61x
 
 
 APPDIR= $(shell if test -d "mapp"; then echo mapp; fi)
@@ -241,6 +241,7 @@ endif
 #ccflags-y += -Wstringop-truncation
 #ccflags-y += -Wmisleading-indentation
 #ccflags-y += -Wunused-const-variable
+ccflags-y += -Wno-array-bounds
 #############################################################################
 # Make Targets
 #############################################################################

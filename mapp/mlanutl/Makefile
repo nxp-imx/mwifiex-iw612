@@ -22,6 +22,8 @@ CFLAGS := $(filter-out -I$(KERNELDIR)%, $(CFLAGS))
 #CFLAGS += -DAP22 -fshort-enums
 CFLAGS += -Wall
 CFLAGS += -Wno-stringop-truncation
+CFLAGS += -Wno-stringop-overflow
+CFLAGS += -Wno-array-bounds
 #ECHO = @
 ifeq (,$(findstring ANDROID_KERNEL, $(CFLAGS)))
 LIBS=-lrt

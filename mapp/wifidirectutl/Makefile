@@ -20,6 +20,8 @@ CFLAGS := $(filter-out -I$(KERNELDIR)%, $(CFLAGS))
 
 
 CFLAGS += -Wall
+CFLAGS += -Wno-stringop-truncation
+CFLAGS += -Wno-array-bounds
 ifeq (,$(findstring ANDROID_KERNEL, $(CFLAGS)))
 LIBS=-lrt
 endif

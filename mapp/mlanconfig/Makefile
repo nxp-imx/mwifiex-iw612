@@ -19,6 +19,9 @@ CFLAGS := $(filter-out -D__%, $(ccflags-y))
 # remove KERNEL include dir
 CFLAGS := $(filter-out -I$(KERNELDIR)%, $(CFLAGS))
 
+CFLAGS += -Wno-nonnull
+CFLAGS += -Wno-format-overflow
+
 #
 # List of application executables to create
 #

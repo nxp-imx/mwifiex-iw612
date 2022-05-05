@@ -1454,7 +1454,7 @@ static int mlanwls_read_ftm_config(char *file_name)
 	char *data = NULL;
 	int arg_num, li;
 	char *args[30];
-	t_u8 param;
+	t_u8 param = 0;
 
 	// read config
 	config_file = fopen(file_name, "r");
