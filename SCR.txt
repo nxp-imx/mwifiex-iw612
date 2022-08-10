@@ -1,0 +1,14 @@
+NXP Software Content Register
+
+--------------------------------------------
+
+Package:                   mwifiex-iw612.git
+Outgoing License:          GPL-2.0
+License File:              gpl-2.0.txt
+Package Category:          BSP
+Type of content:           source
+Description and comments:  NXP IW612 Wi-Fi linux SDK
+Release Location:          https://github.com/nxp-imx/mwifiex-iw612
+Origin:                    NXP (GPL-2.0)
+
+--------------------------------------------
