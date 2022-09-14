@@ -8642,12 +8642,12 @@ void woal_regist_oob_wakeup_irq(moal_handle *handle)
 	/*
 	 * i.MX93 9x9 qsb board connect the out-of-band WoWLAN irq pin(M.2 pin21
 	 * SDIO_WAKE) to I2C IO expander pcal6524 instead of i.MX GPIO, pcal6524
-	 * IRQ handlers need to be threaded, and the IRQ trigger type must be edge
-	 * instead of level.
+	 * IRQ handlers need to be threaded, the IRQ trigger type depends on the
+	 * Devicetree setting.
 	 */
 	ret = devm_request_threaded_irq(dev, handle->irq_oob_wakeup,
 			       NULL, woal_oob_wakeup_irq_handler,
-			       IRQF_TRIGGER_FALLING | IRQF_SHARED | IRQF_ONESHOT,
+			       IRQF_SHARED | IRQF_ONESHOT,
 			       "wifi_oob_wakeup", handle);
 	if (ret) {
 		dev_err(dev, "Failed to request irq_oob_wakeup %d (%d)\n",
